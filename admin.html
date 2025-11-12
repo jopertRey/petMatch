@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard — Pet Adoption System</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Admin-specific small additions only */
+    main {
+      background: var(--card);
+      padding: 24px;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 18px rgba(20, 20, 30, 0.05);
+      margin-top: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .admin-section {
+      margin-bottom: 40px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: var(--muted);
+    }
+
+    .actions button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-right: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .actions button:hover {
+      background: #0077cc;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    form button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background: #0077cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="#" class="brand">
+        <div class="logo">🐾</div>
+        <strong>Admin Dashboard</strong>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#" class="primary">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="admin-section">
+        <h2>Add New Pet</h2>
+        <form id="addPetForm">
+          <label>
+            Pet Name:
+            <input type="text" name="name" placeholder="Enter pet name" required />
+          </label>
+          <label>
+            Category:
+            <select name="category" required>
+              <option value="">Select category</option>
+              <option>Dog</option>
+              <option>Cat</option>
+              <option>Bird</option>
+              <option>Fish</option>
+              <option>Rabbit</option>
+              <option>Reptile</option>
+            </select>
+          </label>
+          <label>
+            Age:
+            <input type="text" name="age" placeholder="e.g. 2 years" required />
+          </label>
+          <label>
+            Price:
+            <input type="number" name="price" placeholder="e.g. 500" required />
+          </label>
+          <label>
+            Status:
+            <select name="status">
+              <option>Available</option>
+              <option>Sold Out</option>
+            </select>
+          </label>
+          <label>
+            Image Upload:
+            <input type="file" name="image" accept="image/*" />
+          </label>
+          <label>
+            Description:
+            <textarea name="description" rows="3" placeholder="Enter description"></textarea>
+          </label>
+          <button type="button">Save Pet</button>
+        </form>
+      </section>
+
+      <section class="admin-section">
+        <h2>Pet Listings</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Age</th>
+              <th>Price</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Static examples for now -->
+            <tr>
+              <td><img src="dog1.jpg" alt="Dog" width="60" style="border-radius:8px"></td>
+              <td>Buddy</td>
+              <td>Dog</td>
+              <td>2 yrs</td>
+              <td>₱2,000</td>
+              <td>Available</td>
+              <td class="actions">
+                <button>Edit</button>
+                <button style="background:#f44336;">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="cat1.jpg" alt="Cat" width="60" style="border-radius:8px"></td>
+              <td>Mimi</td>
+              <td>Cat</td>
+              <td>1 yr</td>
+              <td>₱1,500</td>
+              <td>Sold Out</td>
+              <td class="actions">
+                <button>Edit</button>
+                <button style="background:#f44336;">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="brand-footer">
+          <p>© 2025 Pet Adoption System | Admin Dashboard</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
